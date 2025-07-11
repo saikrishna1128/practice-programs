@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in = new Scanner(System.in);
+        int ammount = in.nextInt();
+        if(ammount > 20000){
+            System.out.print("Please enter a lesser denomination");  
+        }
+        else if(ammount%100 != 0){
+            System.out.print("Please enter the amount in multiples of 100");
+        }
+        else{
+           if(ammount < 500){
+               int h = ammount/100;
+               System.out.print(h +" "+ "hundreds");
+           }
+            else{
+                int fiveh = ammount/500;
+                int rem = ammount % 500;
+                int hun = rem /100;
+                System.out.print(fiveh+":"+"500s"+" "+hun+":"+"100s");
+            }
+        }
+    }
+}
